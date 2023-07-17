@@ -6,7 +6,7 @@ import { Configuration, OpenAIApi } from "openai"
 
 const app = express()
 
-const path = require('path')
+import * as path from "path";
 const port = process.env.PORT || 5000;
 env.config()
 
