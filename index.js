@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { Configuration, OpenAIApi } from 'openai';
+import { bot, answering, profile } from './responses.js';
 
 const app = express();
 
@@ -53,7 +54,7 @@ app.post('/', async (req, res) => {
 
     try {
         const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",  // Use the correct model name
+            model: "gpt-3.5-turbo-0125",  // Use the correct model name
             messages: [{ role: "user", content: text }],
             max_tokens: 300,
         });
