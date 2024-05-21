@@ -31,15 +31,18 @@ app.get("/", (req, res) => {
 // Post route for making requests
 app.post('/', async (req, res) => {
     const { message } = req.body;
-
-    let text = bot + answering + profile;
+    let persona = bot;
+    let guidelines = answering;
+    let oneshot = profile;
 
     try {
         const response = await openai.createChatCompletion({
-            model: "gpt-4",  // Ensure this is a valid model name
+            model: "gpt-4o",  // Ensure this is a valid model name
             messages: [
-                { role: "system", content: text },
-                { role: "user", content: message }
+                { role: "system", content: persona },
+                { role: "assistant", content: guidelines},
+                { role: "user", content: oneshot },
+                { role: "user", content: message },
             ],
             max_tokens: 300,
         });
