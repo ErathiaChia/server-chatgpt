@@ -2,7 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import { Configuration, OpenAIApi } from 'openai';
+// import { Configuration, OpenAIApi } from 'openai';
+import OpenAI from "openai";
 import { bot, answering, profile } from './PersonalProfile.js';
 
 const app = express();
@@ -12,11 +13,15 @@ dotenv.config();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configure OpenAI API
-const configuration = new Configuration({
-    apiKey: process.env.API_KEY, // Ensure this key is correctly set in your .env file
+const openai = new OpenAI({
+    apiKey: process.env.API_KEY
 });
-const openai = new OpenAIApi(configuration);
+
+// // Configure OpenAI API
+// const configuration = new Configuration({
+//     apiKey: process.env.API_KEY, // Ensure this key is correctly set in your .env file
+// });
+// const openai = new OpenAIApi(configuration);
 
 // Listening
 app.listen(process.env.PORT || 5001, () => {
@@ -50,7 +55,7 @@ app.post('/', async (req, res) => {
     // }
 
     try {
-        const response = await openai.createChatCompletion({
+        const response = await openai.chat.completions.create({
             model: "gpt-4o",  // Use the correct model name
             messages: [{ role: "SYSTEM", content: text },
             { role: "user", content: {message} }],
