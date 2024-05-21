@@ -32,27 +32,28 @@ app.get("/", (req, res) => {
 app.post('/', async (req, res) => {
     const { message } = req.body;
 
-    let text = "";
+    let text = bot + answering + profile;
 
     // Declare a boolean flag variable
     let isFirstTime = true;
 
-    // Check the flag to determine the action
-    if (isFirstTime) {
-        // Code to execute if it's the first time
-        text = bot + answering + profile + `${message}`;
-        // Set the flag to false to indicate it's no longer the first time
-        isFirstTime = false;
-    } else {
-        // Code to execute if it's not the first time
-        text = `${message}`;
-        // Additional actions can be performed here
-    }
+    // Void this as chat completion changed. // Check the flag to determine the action
+    // if (isFirstTime) {
+    //     // Code to execute if it's the first time
+    //     text = bot + answering + profile + `${message}`;
+    //     // Set the flag to false to indicate it's no longer the first time
+    //     isFirstTime = false;
+    // } else {
+    //     // Code to execute if it's not the first time
+    //     text = `${message}`;
+    //     // Additional actions can be performed here
+    // }
 
     try {
         const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo-0125",  // Use the correct model name
-            messages: [{ role: "user", content: text }],
+            model: "gpt-4o",  // Use the correct model name
+            messages: [{ role: "SYSTEM", content: text },
+            { role: "user", content: message }],
             max_tokens: 300,
         });
 
