@@ -2,8 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-// import { Configuration, OpenAIApi } from 'openai';
-import OpenAI from "openai";
+import { Configuration, OpenAIApi } from 'openai';
 import { bot, answering, profile } from './PersonalProfile.js';
 
 const app = express();
@@ -13,9 +12,11 @@ dotenv.config();
 app.use(cors());
 app.use(bodyParser.json());
 
-const openai = new OpenAI({
-    apiKey: process.env.API_KEY
+const configuration = new Configuration({
+    apiKey: process.env.API_KEY,
 });
+
+const openai = new OpenAIApi(configuration);
 
 // Listening
 app.listen(process.env.PORT || 5001, () => {
@@ -34,7 +35,7 @@ app.post('/', async (req, res) => {
     let text = bot + answering + profile;
 
     try {
-        const response = await openai.chat.completions.create({
+        const response = await openai.createChatCompletion({
             model: "gpt-4",  // Ensure this is a valid model name
             messages: [
                 { role: "system", content: text },
@@ -43,12 +44,12 @@ app.post('/', async (req, res) => {
             max_tokens: 300,
         });
 
-        console.log("OpenAI API response:", response); // Log the full response
+        console.log("OpenAI API full response:", response); // Log the full response
 
-        if (response.choices && response.choices[0] && response.choices[0].message) {
-            res.json({ message: response.choices[0].message.content.trim() });
+        if (response.data && response.data.choices && response.data.choices[0] && response.data.choices[0].message) {
+            res.json({ message: response.data.choices[0].message.content.trim() });
         } else {
-            console.error("Unexpected API response structure", response);
+            console.error("Unexpected API response structure", response.data);
             res.status(500).json({ error: "Unexpected API response structure" });
         }
     } catch (e) {
