@@ -35,7 +35,7 @@ app.post('/', async (req, res) => {
     let text = bot + answering + profile;
 
     // Declare a boolean flag variable
-    let isFirstTime = true;
+    // let isFirstTime = true;
 
     // Void this as chat completion changed. // Check the flag to determine the action
     // if (isFirstTime) {
@@ -50,10 +50,10 @@ app.post('/', async (req, res) => {
     // }
 
     try {
-        const response = await openai.createChatCompletion({
+        const response = await openai.chat.completions.create({
             model: "gpt-4o",  // Use the correct model name
             messages: [{ role: "SYSTEM", content: text },
-            { role: "user", content: message }],
+            { role: "user", content: {message} }],
             max_tokens: 300,
         });
 
