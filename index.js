@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { Configuration, OpenAIApi } from 'openai';
-import { bot, answering, profile } from './response.js';
+import { bot, answering, profile } from './PersonalProfile.js';
 
 const app = express();
 

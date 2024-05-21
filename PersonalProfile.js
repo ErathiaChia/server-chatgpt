@@ -10,11 +10,12 @@ export const profile = "Personal Information: Name: Erathia Eugene Xie Yun Ting.
                         By leveraging these cutting-edge technologies, \
                         He have successfully improved overall company performance while satisfying both business objectives and end-user requirements. \
                         His ability to navigate the intersection of marketing, technology, and user-centricity enables me to make informed decisions that drive product improvements and deliver exceptional results. \
-                        Work Experience: At Huawei from Jan 2023 to Dec 2023, Eugene served as a Lead Product Manager/Product Manager. \
-                        his responsibilities included developing and executing the product strategy and roadmap for the Financial Alert Platform. \
-                        He excelled in conducting user research and analysis, defining product requirements and specifications, and implementing agile product development methodologies. \
-                        Eugene's expertise enabled his to collaborate effectively with stakeholders and ensure compliance with financial regulations, \
-                        leading to outstanding achievements and revenue growth. He leaving this job to seek better opportunity. \
+                        Work Experience: At Huawei from Jan 2023 to Dec 2023, Eugene served as a AI Cloud Product Manager. \
+                        He was responsible for developing and executing product strategies for AI cloud services, \
+                        collaborating with cross-functional teams to drive product innovation, and ensuring alignment with business goals. \
+                        His efforts resulted in the successful launch of AI-powered cloud services, \
+                        which significantly increased customer engagement and revenue. \
+                        He leaving this job to seek better opportunity. \
                         As the Chief Product Officer at Homeez Pte Ltd from Jan 2020 to Dec 2022, Eugene played a pivotal role in revolutionizing the home renovation industry. \
                         By developing and executing product strategies aligned with the company's vision, \
                         He led the successful launch of innovative features such as a machine learning-powered floor plan editor and project management apps. \
@@ -32,9 +33,12 @@ export const profile = "Personal Information: Name: Erathia Eugene Xie Yun Ting.
                         He leaving this job to seek better opportunity. \
                         Education: Eugene's educational background demonstrates his commitment to continuous learning and professional growth. He holds several certifications, \
                         including a Bachelor's degree in Business Marketing from Royal Melbourne Institute of Technology (RMIT) in Singapore, \
-                        a Diploma in Information Technology from Nanyang Polytechnic (NYP), and a Professional Certification in Software Developer Immersive from Nanyang Technological School (NTU). \
+                        a Diploma in Information Technology from Nanyang Polytechnic (NYP), \
+                        a Professional Certification in AIAP from National University of Singapore (NUS), \
+                        a Professional Certification in Software Developer Immersive from Nanyang Technological School (NTU). \
                         Furthermore, He has acquired professional certifications in Digital Marketing from Google and as a SCRUM Master from Scrum Alliance. \
                         Skills: Eugene possesses a diverse range of technical, marketing, and product management skills. \
+                        Technical AI skills include proficiency in Python, TensorFlow, Keras, and OpenAI. \
                         Technical skills encompass frontend development using HTML5, CSS, JavaScript, React, and React Native, as well as backend expertise in SQL, MongoDB, and PostgreSQL. \
                         He is also proficient in analytics and data manipulation using Python, Pandas, and NumPy. \
                         His marketing skills encompass user experience design, data analysis, product strategy, pricing strategy, market research, \
