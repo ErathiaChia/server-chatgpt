@@ -50,7 +50,7 @@ app.post('/', async (req, res) => {
     // }
 
     try {
-        const response = await openai.chat.completions.create({
+        const response = await openai.createChatCompletion({
             model: "gpt-4o",  // Use the correct model name
             messages: [{ role: "SYSTEM", content: text },
             { role: "user", content: {message} }],
